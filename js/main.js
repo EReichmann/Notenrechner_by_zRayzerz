@@ -46,12 +46,16 @@ function tfAuslesen() {
         }
     }
 
+    if (ergebnis<5){
+        document.getElementById("test").innerHTML = "man bist du doof!";
+    } else {
+        if (ergebnis<11){
+            document.getElementById("test").innerHTML = "joa, geht aber schon noch besser, oder?"
+        }else {
+            document.getElementById("test").innerHTML = "auf Streber angelehnt, oder wie?"
+        }
+    }
 
-//    document.getElementById("Test").innerHTML
-
-//    if (ergebnis<5){
-//        document.getElementById("Test").innerHTML
-//    }
 
 }
 //isNan = ist keine Zahl -> wenn das erfüllt steht keine Note da
@@ -64,3 +68,4 @@ function eingabeUebrpruefung(punkte) {
     }
 
 }
+
