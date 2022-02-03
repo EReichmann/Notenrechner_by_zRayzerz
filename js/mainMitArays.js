@@ -1,3 +1,5 @@
+//Variablen werden mit let definiert
+
 let eingabefelder = ['tfNote1', 'tfnote2', 'tfnote3', 'tfnote4', 'tfnote5', 'tfnote6'];
 let noten = [];
 let summe = 0;
@@ -9,6 +11,9 @@ function tfAuslesen() {
 
     anzahlNoten = 0
     summe = 0
+
+    //for := schleife, hat 3 Bedingungen
+    //i++ := i = i+1
 
     for (let i = 0; i < eingabefelder.length; i++){
         aktuelleEingabe = parseInt(document.getElementById(eingabefelder[i]).value)
