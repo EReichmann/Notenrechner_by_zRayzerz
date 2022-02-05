@@ -15,47 +15,54 @@ function tfAuslesen() {
     //for := schleife, hat 3 Bedingungen
     //i++ := i = i+1
 
-    for (let i = 0; i < eingabefelder.length; i++){
+    for (let i = 0; i < eingabefelder.length; i++) {
         aktuelleEingabe = parseInt(document.getElementById(eingabefelder[i]).value)
-    eingabeUeberpruefung(aktuelleEingabe)
+        eingabeUeberpruefung(aktuelleEingabe)
 
-        ergebnis=summe/anzahlNoten;}
+        ergebnis = summe / anzahlNoten;
+    }
 
 //Ausgabe wird als Erbgebnis definiert
 
-        document.getElementById("ausgabe").innerHTML = ergebnis;
+    document.getElementById("ausgabe").innerHTML = ergebnis;
 
-        //Färbung der Ergebnisse
+    //Färbung der Ergebnisse
 
-        if (ergebnis<5){
-            document.getElementById("ausgabe").style.color = "crimson";
+    if (ergebnis < 5) {
+        document.getElementById("ausgabe").style.color = "crimson";
+    } else {
+        if (ergebnis < 11) {
+            document.getElementById("ausgabe").style.color = "#D08C18";
         } else {
-            if (ergebnis<11){
-                document.getElementById("ausgabe").style.color = "#D08C18";
-            } else {
-                document.getElementById("ausgabe").style.color = "green";
-            }
+            document.getElementById("ausgabe").style.color = "green";
         }
+    }
+    //Trennung der Variablen voneinander durch "||"
+    if (ergebnis < 0 || ergebnis > 15)  {
+        document.getElementById("ausgabe").innerHTML ="Dies kann nicht dein Durchschnitt sein, da der Wert über 15,0 ist!"
+    }
 
-        if (ergebnis<5){
+
+        if (ergebnis < 5) {
             document.getElementById("test").innerHTML = "man bist du doof!";
         } else {
-            if (ergebnis<11){
+            if (ergebnis < 11) {
                 document.getElementById("test").innerHTML = "joa, geht aber schon noch besser, oder?"
-            }else {
+            } else {
                 document.getElementById("test").innerHTML = "auf Streber angelehnt, oder wie?"
             }
         }
+    }
 
 
 
 //isNan = ist keine Zahl -> wenn das erfüllt steht keine Note da
 function eingabeUeberpruefung(punkte) {
-    if (isNaN(punkte)){
+    if (isNaN(punkte)) {
         console.log("Keine Zahl");
-    }else {
+    } else {
         anzahlNoten = anzahlNoten + 1;
         summe = summe + punkte;
     }
-}
 
+}
